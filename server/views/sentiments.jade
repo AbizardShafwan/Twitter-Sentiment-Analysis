@@ -1,0 +1,33 @@
+
+
+extends layout
+
+block content
+
+	h2 Twitter Sentiments
+	table.table.table-hover
+		thead
+		tr
+			th Tweets
+			th Retweet
+			th Favorite
+			th Tweet Time
+			th Score
+			th Sentiments
+			
+		tbody
+		
+		each event in JSON.parse(eventList)
+			tr
+				td #{event.text}
+				td #{event.retweet}
+				td #{event.favorite}
+				td #{event.tweetDate}
+				td #{event.score}
+				td #{event.sentiments}
+	
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+

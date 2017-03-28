@@ -1,0 +1,47 @@
+extends layout
+
+block content
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				.navbar-brand Control Panel
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Out
+				
+	#sidebar-wrapper
+		ul.sidebar-nav
+			li.sidebar-band
+				a(href="#") Control Panel	
+			li.sidebar-band
+				a(href="#") Create Product Profile
+			li.sidebar-band
+				a(href="/senti") Twitter Sentiment Analysis
+			li.sidebar-band
+				a(href="/eventsInTheArea") Events in the area
+			li.sidebar-band
+				a(href="#") Event Recommendation
+			li.sidebar-band
+				a(href="#") Google search trends
+				
+
+
+	#login.center-vertical
+		form.well(action="/sentiments", method="POST")
+			label Keyword
+			input.form-control(id="sentiments" type="text", placeholder="sentiments", name="sentiments")
+			br
+			label From Date
+			input.form-control(id="date" type="text", placeholder="YYYY-MM-DD", name="date")
+			br
+			input(id="but" type="submit" value="Search Sentiments").btn.btn-primary.button-sign-in
+
+
+
+	
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+
