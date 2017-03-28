@@ -1,7 +1,3 @@
-
-var CT = require('./modules/country-list');
-var AM = require('./modules/account-manager');
-var EM = require('./modules/email-dispatcher');
 var sentimental = require('Sentimental');
 var twit = require('twit');
 var config = require("../../config");
